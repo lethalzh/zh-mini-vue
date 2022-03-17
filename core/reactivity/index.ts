@@ -5,6 +5,8 @@
 let currentEffect;
 
 class Dep {
+    // private effects: any;
+    // private _val: any;
     constructor(val) {
         this.effects = new Set();
         this._val = val;
@@ -51,11 +53,10 @@ function getDep(target, key){
         depsMap = new Map();
         targetMap.set(target, depsMap);
     }
-    console.log(depsMap)
     let dep = depsMap.get(key);
     if(!dep) {
         dep = new Dep();
-        targetMap.set(target, dep);
+        depsMap.set(key, dep);
     }
     return dep;
 }
@@ -90,3 +91,4 @@ effectWatch(()=>{
 })
 
  my.age = 20;
+my.age = 21;
