@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx run webpack.config.js",
-    "dev": "webpack-dev-server --open --port 3000 --contentBase src --hot"
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
